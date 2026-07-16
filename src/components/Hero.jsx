@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Float, Stars, TorusKnot, Icosahedron, MeshDistortMaterial, Sparkles } from '@react-three/drei';
+import { OrbitControls, Float, Stars, TorusKnot, Sparkles } from '@react-three/drei';
 
 const AbstractObject = () => {
   return (
@@ -13,17 +13,6 @@ const AbstractObject = () => {
           wireframe 
         />
       </TorusKnot>
-      <Icosahedron args={[1, 2]} scale={1.3}>
-        <MeshDistortMaterial
-          color="#8b5cf6"
-          attach="material"
-          distort={0.5}
-          speed={2}
-          roughness={0.1}
-          transparent
-          opacity={0.8}
-        />
-      </Icosahedron>
     </Float>
   );
 };
