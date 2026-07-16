@@ -1,11 +1,16 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Float, Stars, TorusKnot, Sparkles } from '@react-three/drei';
 
-const AbstractObject = () => {
+const AbstractObject = ({ isMobile }) => {
   return (
     <Float speed={2.5} rotationIntensity={2} floatIntensity={3}>
-      <TorusKnot args={[1, 0.15, 128, 32]} scale={1.8}>
+      <TorusKnot 
+        args={[1, 0.15, 128, 32]} 
+        scale={isMobile ? 1.0 : 1.8}
+        position={isMobile ? [0, -0.6, 0] : [0, 0, 0]}
+      >
         <meshStandardMaterial 
           color="#0ea5e9" 
           emissive="#8b5cf6" 
@@ -18,16 +23,27 @@ const AbstractObject = () => {
 };
 
 const Hero = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <section id="home" className="relative h-screen flex items-center justify-center pt-20 overflow-hidden">
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 pointer-events-none md:pointer-events-auto">
         <Canvas>
           <ambientLight intensity={0.5} />
           <directionalLight position={[2, 2, 2]} intensity={1} />
           <Stars radius={100} depth={50} count={3000} factor={4} saturation={0} fade speed={2} />
           <Sparkles count={200} scale={12} size={2} speed={0.4} opacity={1} color="#0ea5e9" />
-          <AbstractObject />
-          <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1.5} />
+          <AbstractObject isMobile={isMobile} />
+          <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1.5} enableRotate={!isMobile} />
         </Canvas>
       </div>
 
