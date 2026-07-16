@@ -6,7 +6,7 @@ Welcome to my personal developer portfolio website! Built with **React 19**, **V
 
 ## 🚀 Live Demo
 
-👉 **Explore the Live Site:** [asmikatke.github.io/asmi-portfolio](https://asmikatke.github.io/asmi-portfolio/) (or check out the repo at [github.com/AsmiKatke/asmi-portfolio](https://github.com/AsmiKatke/asmi-portfolio))
+👉 **Explore the Live Site:** https://asmi-katke.vercel.app/
 
 ---
 
