@@ -68,7 +68,7 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">My Work.</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-cyan-300 mb-6">My Work.</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -87,7 +87,7 @@ const Projects = () => {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: index * 0.15, type: "spring", stiffness: 100 }}
                 whileHover={{ y: -15, scale: 1.03 }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden group hover:shadow-[0_0_30px_rgba(139,92,246,0.4)] transition-all duration-300 flex flex-col h-full"
+                className="bg-slate-900/30 backdrop-blur-sm border border-purple-500/10 rounded-2xl overflow-hidden group hover:border-cyan-400/30 hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] transition-all duration-300 flex flex-col h-full"
               >
                 <CardHeaderWrapper {...headerWrapperProps} className={primaryLink ? "cursor-pointer block" : ""}>
                   <div className="h-48 overflow-hidden relative">

@@ -19,7 +19,7 @@ const About = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Overview.</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-cyan-300 mb-6">Overview.</h2>
           <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             I'm an AI Engineering student specializing in bridging the gap between heavy machine learning models and clean, scalable web architectures. I build real-time computer vision systems, IoT safety devices, and responsive web platforms.
           </p>
@@ -35,7 +35,7 @@ const About = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -15, scale: 1.05 }}
               animate={{ y: [0, -8, 0] }}
-              className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] flex flex-col items-center justify-center text-center group transition-all"
+              className="bg-slate-900/30 backdrop-blur-xl border border-purple-500/10 p-8 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] flex flex-col items-center justify-center text-center group transition-all duration-300 hover:border-cyan-400/30 hover:shadow-[0_0_25px_rgba(168,85,247,0.15)]"
             >
               <div className="mb-4 p-4 bg-white/5 rounded-full group-hover:scale-110 transition-transform duration-300">
                 {skill.icon}
